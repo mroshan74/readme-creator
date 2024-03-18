@@ -1,4 +1,5 @@
 import DropDown from "@/pages/svgImages/DropDown"
+import { useTranslation } from "next-i18next"
 
 export const languageSupports = [
   {
@@ -9,9 +10,11 @@ export const languageSupports = [
     label: "Malayalam",
     route: "/ml"
   }
-]
+];
 
 export const LanguageDropDown = () => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="group inline-block relative">
       <button className="text-gray-800 py-2 px-4 rounded inline-flex items-center">
@@ -23,10 +26,10 @@ export const LanguageDropDown = () => {
       <ul className="absolute text-gray-800 pt-1 origin-top transform-gpu transition-transform scale-y-0 group-hover:scale-y-100 focus-within:scale-y-100">
         {languageSupports.map(({ label, route }, index) => (
           <li key={`${label}_${index}`}>
-            <a className="block w-32 px-4 py-2 whitespace-nowrap bg-gray-200 hover:bg-green-400" href={route}>{label}</a>
+            <a className="block w-32 px-4 py-2 whitespace-nowrap bg-gray-200 hover:bg-green-400" href={route}>{t(label.toLowerCase())}</a>
           </li>
         ))}
-        <li><a className="text-xs break-words block w-32 px-4 py-2 whitespace-nowrap bg-gray-200 hover:bg-green-400" href="http://www.example.com" target="__blank">Translation Error</a></li>
+        <li><a className="text-xs break-words block w-32 px-4 py-2 whitespace-nowrap bg-gray-200 hover:bg-green-400" href="http://www.example.com" target="__blank">{t("translation-error")}</a></li>
       </ul>
     </div>
   )
