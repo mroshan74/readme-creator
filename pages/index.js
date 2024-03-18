@@ -1,9 +1,6 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import Link from "next/link";
-import Dots from "./assets/svgImages/Dots";
-
-const inter = Inter({ subsets: ["latin"] });
+import Dots from "@/pages/svgImages/Dots";
+import { LanguageDropDown } from "@/components/LanguageDropDown";
 
 export default function Home() {
   return (
@@ -17,7 +14,7 @@ export default function Home() {
           </div>
           <div className="relative pt-6 pb-16 sm:pb-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <nav className="relative flex items-center justify-between sm:h-10 md: justify-center">
+              <nav className="relative flex items-center justify-between sm:h-10 md:justify-center">
                 <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
                     <Link href="/" className="flex items-center">
@@ -26,7 +23,7 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
-                <div className="relative w-28 flex items-center flex-1 md:absolute md:inset-y-0 md:right-0 z-10">Language</div>
+                <div className="relative w-28 flex items-center flex-1 md:absolute md:inset-y-0 md:right-0 z-10"><LanguageDropDown/></div>
               </nav>
             </div>
             {/* Hero Section */}
@@ -59,6 +56,7 @@ export default function Home() {
             <img className="relative rounded-md shadow-lg" src="images/readmeCreator.png" alt="readme-creator-screenshot" />
           </div>
         </div>
+        {/* Footer Section */}
         <div className="bg-gray-800">
           <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <h2 className="text-center text-gray-400 text-sm font-semibold tracking-wide">
